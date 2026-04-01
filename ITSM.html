@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITSM インシデント詳細 - INC0026705 (特大文字版)</title>
+    <style>
+        /* 全体の基本サイズをさらに拡大 (18px -> 20px) */
+        body { 
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; 
+            background-color: #f0f2f5; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            height: 100vh; 
+            font-size: 20px; 
+            line-height: 1.8; 
+        }
+        
+        header { background-color: #0b121e; color: white; padding: 20px 30px; font-size: 1.8rem; font-weight: bold; }
+        
+        .main-container { display: flex; flex: 1; overflow: hidden; }
+        
+        /* サイドバー */
+        nav { width: 320px; background-color: white; border-right: 1px solid #ddd; padding: 30px; }
+        .search-box { width: 100%; padding: 15px; margin-bottom: 30px; border: 2px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 1.2rem; }
+        h3 { font-size: 1.2rem; color: #555; margin-top: 30px; border-bottom: 3px solid #eee; padding-bottom: 10px; }
+        li { padding: 15px 0; font-size: 1.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .count { background: #bbb; border-radius: 15px; padding: 4px 15px; font-size: 1rem; color: #fff; }
+
+        /* メインコンテンツ（選択肢B：ここを大幅に拡大） */
+        main { flex: 1; padding: 40px; overflow-y: auto; }
+        .card { background: white; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); padding: 45px; margin-bottom: 40px; }
+        
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid #eee; }
+        
+        /* インシデントID（超特大） */
+        .incident-id { font-size: 2.5rem; font-weight: bold; color: #1a1a1a; }
+        
+        /* ボタン */
+        .buttons button { padding: 15px 30px; border-radius: 8px; border: none; cursor: pointer; margin-left: 20px; font-weight: bold; font-size: 1.2rem; }
+        .btn-resolve { background-color: #28a745; color: white; }
+        .btn-own { background-color: white; border: 3px solid #ddd !important; }
+        .btn-escalate { background-color: #007bff; color: white; }
+
+        /* 情報グリッド */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .label { color: #555; font-size: 1.1rem; margin-bottom: 10px; font-weight: bold; }
+        .value { font-size: 1.4rem; font-weight: 500; color: #000; }
+        
+        /* ステータスバッジ */
+        .badge { display: inline-block; padding: 6px 20px; border-radius: 20px; font-size: 1.1rem; font-weight: bold; }
+        .badge-high { background-color: #ffeef0; color: #d73a49; border: 2px solid #ffcfd3; }
+        .badge-new { background-color: #e9ecef; color: #495057; border: 2px solid #ced4da; }
+
+        /* 説明セクション */
+        .description-box { margin-top: 40px; border-top: 3px solid #eee; padding-top: 40px; }
+        
+        /* 件名の文字を最大化 */
+        .subject-value { 
+            font-size: 2rem; 
+            font-weight: bold; 
+            color: #d73a49; 
+            margin-bottom: 25px; 
+            line-height: 1.4;
+        }
+        
+        /* 本文の文字を読みやすく拡大 */
+        .description-text { 
+            font-size: 1.5rem; 
+            line-height: 1.8; 
+            background-color: #fcfcfc; 
+            padding: 30px; 
+            border-radius: 10px; 
+            border: 1px solid #eee; 
+            color: #222;
+        }
+
+        /* コメントエリア */
+        .comment-area { width: 100%; height: 200px; padding: 20px; border: 3px solid #ddd; border-radius: 10px; resize: none; margin-top: 20px; box-sizing: border-box; font-size: 1.3rem; }
+    </style>
+</head>
+<body>
+
+<header>ITSM サービスポータル</header>
+
+<div class="main-container">
+    <nav>
+        <input type="text" class="search-box" placeholder="検索...">
+        <h3>インシデント</h3>
+        <ul>
+            <li>新規作成</li>
+            <li>自分に割当 <span class="count">24</span></li>
+            <li>未解決 <span class="count">201</span></li>
+        </ul>
+        <h3>リクエスト</h3>
+        <ul>
+            <li>新規リクエスト</li>
+            <li>未解決 <span class="count">160</span></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="card">
+            <div class="card-header">
+                <div class="incident-id">INC0026705</div>
+                <div class="buttons">
+                    <button class="btn-resolve">解決済にする</button>
+                    <button class="btn-own">自分が担当</button>
+                    <button class="btn-escalate">L2転送</button>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div>
+                    <div class="label">報告者</div>
+                    <div class="value">Delilah Kayley</div>
+                </div>
+                <div>
+                    <div class="label">ユーザーID</div>
+                    <div class="value">dkayley@kanopy</div>
+                </div>
+                <div>
+                    <div class="label">対象デバイス</div>
+                    <div class="value">KAN-MIAMI-76FL61</div>
+                </div>
+                <div>
+                    <div class="label">サービス</div>
+                    <div class="value">VIP サポート</div>
+                </div>
+                <div>
+                    <div class="label">緊急度</div>
+                    <div class="value"><span class="badge badge-high">1 － 緊急</span></div>
+                </div>
+                <div>
+                    <div class="label">ステータス</div>
+                    <div class="value"><span class="badge badge-new">新規受付</span></div>
+                </div>
+            </div>
+
+            <div class="description-box">
+                <div class="label">件名</div>
+                <div class="subject-value">VIP － ノートPCが完全に起動・使用不能</div>
+                
+                <div class="label">詳細内容</div>
+                <div class="description-text">
+                    報告者はマイアミ・オペレーション部門の責任者です。<br><br>
+                    <strong>【問題の詳細】</strong><br>
+                    Zoom会議中にノートPCがフリーズし、その後強制終了。現在は再起動もできず、全く使用できない状態です。<br><br>
+                    <strong>【緊急性】</strong><br>
+                    本日の午後に重要顧客とのオンライン会議が予定されており、早急な復旧が必須です。即時の対応を強く希望されています。
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="incident-id" style="font-size: 1.8rem; margin-bottom: 15px;">対応記録の追加</div>
+            <textarea class="comment-area" placeholder="対応内容を入力してください..."></textarea>
+            <div style="text-align: right; margin-top: 20px;">
+                <button class="btn-escalate" style="margin-left: 0; padding: 15px 50px;">コメントを送信</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
